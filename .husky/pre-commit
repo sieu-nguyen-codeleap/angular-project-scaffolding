@@ -1,1 +1,3 @@
 npm run lint:fix
+npx prettier . --check
+exit 1
