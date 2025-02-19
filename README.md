@@ -1,59 +1,56 @@
-# Scaffolding
+# Angular scaffolding project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+> This project aim to setup an angular starter code with tailwindcss, inline template and style, basic routes, husky, ci for pull and merge
 
-## Development server
+## Folder structure
 
-To start a local development server, run:
+> Follow atomic design
 
-```bash
-ng serve
-```
+- Atoms component will set in **/components/patials/**
+- Molecules componenst arraneg Atoms and place in **/components/**
+- Sit in **/app/** will be list of page components
+- To create page component : `ng g c comp-name`
+- To create molecule component : `ng g c components/comp-name`
+- To create atomic component : `ng g c components/partials`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Inline Templates. and Styles
 
-## Code scaffolding
+- Standalone component and setup with inline templates and styles
+- To create : `ng n app-name --inline-style --inline-template`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Styling Setup:
 
-```bash
-ng generate component component-name
-```
+> Style with tailwindcss v4
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Setup step : [Set up angular with tailwindcss](https://tailwindcss.com/docs/installation/framework-guides/angular)
 
-```bash
-ng generate --help
-```
+## Pre-commit Hooks Setup:
 
-## Building
+> Husky + Eslint + Prettier + lint-staged
 
-To build the project run:
+### Install Eslint
 
-```bash
-ng build
-```
+`ng add eslint`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Install Prettier
 
-## Running unit tests
+`ng add prettier`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Install Lint Staged
 
-```bash
-ng test
-```
+`npm install lint-staged`
 
-## Running end-to-end tests
+### Set up husky:
 
-For end-to-end (e2e) testing, run:
+- Type `npx husky init`
+- Go to package json, add to scripts : <br>
+  `"lint:fix": "eslint --fix .",`<br>`"format:check": "prettier --check ."`
+- Outside scripts, add : `"lint-staged": {
+  "**/*": "prettier --write . --ignore-unknown"
+},`
+- Go to pre-commit in .husky, add : <br>`npm run lint `<br>`npx lint-staged`
 
-```bash
-ng e2e
-```
+### Git Actions Setup :
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Config 2 jobs for 2 action pull and push on main branches
+- Get detail on **workflow**
