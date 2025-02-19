@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent],
   template: `
-    <h1 class="text-3xl font-bold underline">Hello, {{ title }}!</h1>
-
-    <router-outlet />
+    <app-header />
+    <main class="bg-[#F2F4F7] dark:bg-[#1C1C1D] h-screen">
+      <router-outlet />
+    </main>
   `,
   styles: [],
 })
