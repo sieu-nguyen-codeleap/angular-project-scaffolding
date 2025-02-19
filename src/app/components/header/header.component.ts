@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { SearchFormComponent } from '../partials/search-form/search-form.component';
+import { NavListComponent } from '../partials/nav-list/nav-list.component';
 
 @Component({
   selector: 'app-header',
-  imports: [SearchFormComponent],
+  imports: [NavListComponent],
   template: `
     <header class="bg-white dark:bg-[#252728] p-4">
-      <app-search-form />
+      <app-nav-list />
     </header>
   `,
   styles: ``,
