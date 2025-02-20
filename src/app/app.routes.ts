@@ -5,33 +5,39 @@ export const routes: Routes = [
     path: '',
     pathMatch: 'full',
     loadComponent: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'company',
     loadComponent: () =>
-      import('./company/company.component').then((m) => m.CompanyComponent),
+      import('./pages/company/company.component').then(
+        (m) => m.CompanyComponent,
+      ),
   },
   {
     path: 'market-place',
     loadComponent: () =>
-      import('./market-place/market-place.component').then(
+      import('./pages/market-place/market-place.component').then(
         (m) => m.MarketPlaceComponent,
       ),
   },
   {
     path: 'features',
     loadComponent: () =>
-      import('./features/features.component').then((m) => m.FeaturesComponent),
+      import('./pages/features/features.component').then(
+        (m) => m.FeaturesComponent,
+      ),
   },
   {
     path: 'team',
     loadComponent: () =>
-      import('./team/team.component').then((m) => m.TeamComponent),
+      import('./pages/team/team.component').then((m) => m.TeamComponent),
   },
   {
     path: 'contact',
     loadComponent: () =>
-      import('./contact/contact.component').then((m) => m.ContactComponent),
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent,
+      ),
   },
 ];

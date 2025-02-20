@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavListComponent } from '../partials/nav-list/nav-list.component';
+import { NavListComponent } from '../../atoms/nav-list/nav-list.component';
 
 @Component({
   selector: 'app-header',
